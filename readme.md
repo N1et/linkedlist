@@ -44,11 +44,11 @@ returns the sum of all elements of the __list__
 ```c 
 struct No* list_node_at(const unsigned int index, struct No* list);
 ```
-returns the element(struct node) of the index.
+returns the element(__struct node__) of the __index__.
 
 ```c 
 int list_get(const unsigned int index, struct No* list);
 ```
-return the element number(struct node.number) of the index
+return the element number int(__struct node.number__) of the __index__.
 
 
