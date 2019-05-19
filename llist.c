@@ -17,19 +17,14 @@ struct No* list_create(const int n){
     newl = malloc( sizeof(struct No) );
     newl->number = n;
     newl->next = NULL;
-    
     return newl;
-    
 }
 // Adiciona um elemento em primeiro lugar
 void list_add_front(const int n, struct No** list){
     struct No* newl;
     newl = list_create(n);
-    
     newl->next = *list;
     *list = newl;
-    
-    
 }
 // adiciona um elemento em ultimo lugar
 void list_add_back(const int n, struct No* list){
@@ -37,12 +32,9 @@ void list_add_back(const int n, struct No* list){
     size_t lsize;
     struct No* last_l;
     newl = list_create(n);
-    
     lsize = list_length(list);
     last_l = list_node_at(lsize-1, list); // retorna o ultimo elemento
-    
     last_l->next = newl;
-    
 }
 // Retorna um size_t com o tamanho total de elementos da lista passado
 size_t list_length(struct No* list) {
@@ -58,7 +50,6 @@ int list_sum(struct No* list){
     for(node=list; node != NULL ; node=node->next)
         sum += node->number;
     return sum;
-        
 }
 // retorna o node pelo seu indice na lista
 struct No* list_node_at(const unsigned int index, struct No* list){
@@ -67,9 +58,7 @@ struct No* list_node_at(const unsigned int index, struct No* list){
     length = list_length(list);
     if(index >= length)
         return NULL;
-    
     for(node=list, lsize=0; lsize<index; node=node->next, lsize++);
-        
     return node;
 }
 // retorna o elemento(node.number) pelo seu indice
@@ -89,7 +78,6 @@ void list_free(struct No* list){
 		//printf("free: %p - %d ", (void *) node, node->number);
 		n_node = node->next;
 		free(node);
-		
 	}
 }
 //others
@@ -107,7 +95,6 @@ struct No* map(struct No* list, int (*func) (int) ) {
 	struct No* renode;
 	for(node=list; node != NULL ; node=node->next)
 		list_add_back(func(node->number), cpnode);
-	
 	renode = cpnode->next;
 	free(cpnode);
 	return renode; 
