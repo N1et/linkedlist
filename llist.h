@@ -16,4 +16,5 @@ int foldl(struct No* list, int a, int (*func)(int, int));
 struct No* iterate(int s, size_t n, int (*func) (int));
 bool save(struct No* list, const char* filename);
 bool load(struct No** list, const char* filename);
-
+bool serialize(struct No* list, const char* filename);
+bool deserialize(struct No** list, const char* filename);

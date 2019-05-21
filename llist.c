@@ -122,6 +122,7 @@ struct No* iterate(int s, size_t n, int (*func) (int) ) {
 	}
 	return nwl;
 }
+// salva os elementos de uma lista em modo texto(txt)
 bool save(struct No* list, const char* filename){
 	struct No* node;
 	FILE *fd;
@@ -132,14 +133,42 @@ bool save(struct No* list, const char* filename){
 	fclose(fd);
 	return true;
 }
+// carrega os elementos de uma lista de um txt
 bool load(struct No** list, const char* filename){
 	FILE *fd;
 	int element;
 	fd = fopen(filename, "r");
 	if( fd == NULL ) return false;
 	while(1){
-		fscanf(fd, "%d ", &element); 
-		if( element == EOF) break;
+		fscanf(fd, "%i", &element); 
+		if( feof(fd) ) break;
+		list_add_back(element, *list);
+	}
+	return true;
+}
+// salva os elementos de uma lista em modo binario
+bool serialize(struct No* list, const char* filename){
+	struct No* node;
+	FILE *fd;
+	fd = fopen(filename, "wb");
+	if( fd == NULL ) return false;
+	for(node=list; node != NULL ; node=node->next){
+		fwrite(&node->number, sizeof(int), 1, fd);
+		fwrite(" ", sizeof(char), 1, fd);
+	}
+	fclose(fd);
+	return true;
+}
+// carrega elementos da lsita de um arquivo binario
+bool deserialize(struct No** list, const char* filename){
+	FILE *fd;
+	int element;
+	fd = fopen(filename, "rb");
+	if( fd == NULL ) return false;
+	while(1){
+		fread(&element, sizeof(int), 1, fd);
+		getc(fd); // spaces 
+		if( feof(fd) ) break;
 		list_add_back(element, *list);
 	}
 	return true;
