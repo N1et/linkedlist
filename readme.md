@@ -34,7 +34,7 @@ Each node have this structure, __number integer__, and the __address of next nod
 | `bool serialize(struct No* list, const char* filename); `             | Saves all elements of a list to a file in binary mode.                                                                                                        |
 | `bool deserialize(struct No** list, const char* filename);`           | Loads all elements of a list from file in binary mode.                                                                                                        
 
-## Compiler
+## More
 - C99 compatibility <br>
 - gcc version 8.3.0 (GCC)
     
