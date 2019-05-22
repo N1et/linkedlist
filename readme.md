@@ -13,21 +13,6 @@ struct No
 ```
 Each node have this structure, __number integer__, and the __address of next node__.
 ## Functions
-# LINKED LIST
-Leason from Low Level Programming book.<br>
-_Singly Linked List. A linked list is a way to store a collection of elements. Like an array these can be character or integers. Each element in a linked list is stored in the form of a node._
-Make functions to create, add and remove nodes from linked list
-
-## Node Structure
-```C
-struct No 
-{ // Node
-    int number;
-    struct No* next; // next node
-};
-```
-Each node have this structure, __number integer__, and the __address of next node__.
-## Functions
 
 | functions                                                           | descriptions                                                                                                                                                  |
 |---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
