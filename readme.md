@@ -48,7 +48,8 @@ Each node have this structure, __number integer__, and the __address of next nod
 | `bool load(struct No** list, const char* filename);`                  | Loads all elements of a list from file in text mode.                                                                                                          |
 | `bool serialize(struct No* list, const char* filename); `             | Saves all elements of a list to a file in binary mode.                                                                                                        |
 | `bool deserialize(struct No** list, const char* filename);`           | Loads all elements of a list from file in binary mode.                                                                                                        |
-## Autor
-    
-## ABOUT
- It's a sample project of a book Low Level Programming. 
+
+## Compiler
+    gcc version 8.3.0 (GCC
+## License
+ This project is licensed under the [GPL 3](https://choosealicense.com/licenses/agpl-3.0/) License.
